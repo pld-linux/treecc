@@ -1,0 +1,18 @@
+--- treecc-0.0.1/doc/treecc.texi~	Mon Jun 25 08:21:39 2001
++++ treecc-0.0.1/doc/treecc.texi	Wed Jul 18 15:58:59 2001
+@@ -21,6 +21,15 @@
+ @center{Copyright @copyright{} 2001 Southern Storm Software, Pty Ltd}
+ @end titlepage
+ 
++@ifinfo
++@format
++@dircategory Programming tools:
++@direntry
++* treecc: (treecc).			Tree compiler-compiler
++@end direntry
++@end format
++@end ifinfo
++
+ @c -----------------------------------------------------------------------
+ 
+ @node Top, Overview, , (dir)
