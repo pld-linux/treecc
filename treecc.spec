@@ -1,7 +1,7 @@
 Summary:	Tree compiler-compiler
 Summary(pl):	Kompilator kompilacji drzew
 Name:		treecc
-Version:	0.1.8
+Version:	0.2.2
 Release:	1
 License:	GPL
 Group:		Development/Languages
@@ -54,6 +54,6 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc README
 %attr(755,root,root) %{_bindir}/*
-%{_datadir}/treecc
+# %{_datadir}/treecc
 %{_mandir}/man1/*
 %{_infodir}/treecc*
