@@ -7,12 +7,12 @@ License:	GPL
 Group:		Development/Languages
 Source0:	http://www.southern-storm.com.au/download/%{name}-%{version}.tar.gz
 Patch0:		%{name}-info.patch
+Patch1:		%{name}-make-jN.patch
 URL:		http://www.southern-storm.com.au/treecc.html
 BuildRequires:	autoconf
 BuildRequires:	automake >= 1.6
 BuildRequires:	bison
 BuildRequires:	flex
-BuildRequires:	gcc-c++
 BuildRequires:	texinfo
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -29,6 +29,7 @@ obs³ugi abstrakcyjnej sk³adni drzew i operacji na drzewach.
 %prep
 %setup -q
 %patch0 -p1
+%patch1 -p1
 
 %build
 rm -f missing
