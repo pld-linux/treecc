@@ -10,9 +10,10 @@ Patch0:		%{name}-info.patch
 URL:		http://www.southern-storm.com.au/treecc.html
 BuildRequires:	autoconf
 BuildRequires:	automake >= 1.6
+BuildRequires:	bison
+BuildRequires:	flex
 BuildRequires:	gcc-c++
 BuildRequires:	texinfo
-BuildRequires:	yacc
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
