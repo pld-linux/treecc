@@ -1,7 +1,7 @@
 Summary:	Tree compiler-compiler
 Summary(pl):	Kompilator kompilacji drzew
 Name:		treecc
-Version:	0.1.4
+Version:	0.1.8
 Release:	1
 License:	GPL
 Group:		Development/Languages
