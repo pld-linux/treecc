@@ -6,8 +6,7 @@ Release:	2
 License:	GPL
 Group:		Development/Languages
 Source0:	http://www.southern-storm.com.au/download/%{name}-%{version}.tar.gz
-# Source0-md5: 
-#Source0-md5:	1c43d228724c286e4991abc13b59e6f6
+# Source0-md5:	1c43d228724c286e4991abc13b59e6f6
 Patch0:		%{name}-info.patch
 Patch1:		%{name}-make-jN.patch
 URL:		http://www.southern-storm.com.au/treecc.html
