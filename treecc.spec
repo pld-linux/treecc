@@ -12,6 +12,7 @@ BuildRequires:	autoconf
 BuildRequires:	automake >= 1.6
 BuildRequires:	gcc-c++
 BuildRequires:	texinfo
+BuildRequires:	yacc
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
