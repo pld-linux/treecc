@@ -1,5 +1,6 @@
 Summary:	Tree compiler-compiler
 Summary(pl):	Kompilator kompilacji drzew
+Summary(pt_BR):	Tree Compilador de compiladores
 Name:		treecc
 Version:	0.2.6
 Release:	2
@@ -26,6 +27,12 @@ code to handle abstract syntax trees and operations upon the trees.
 Program treecc jest przeznaczony do pomocy w tworzeniu kompilatorów i
 innych bazuj±cych na jêzykach narzêdzi. Zarz±dza generowaniem kodu do
 obs³ugi abstrakcyjnej sk³adni drzew i operacji na drzewach.
+
+%description -l pt_BR
+O programa treecc é destinado a auxiliar no desenvolviemnto de
+compiladores e outras ferramentas baseadas em linguagens. Ele controla
+a geração de código para manipulação de árvores de sintaxe abstrata e
+operações através de árvores
 
 %prep
 %setup -q
