@@ -2,12 +2,12 @@ Summary:	Tree compiler-compiler
 Summary(pl):	Kompilator kompilacji drzew
 Summary(pt_BR):	Tree Compilador de compiladores
 Name:		treecc
-Version:	0.3.2
-Release:	2
+Version:	0.3.4
+Release:	1
 License:	GPL
 Group:		Development/Languages
 Source0:	http://www.southern-storm.com.au/download/%{name}-%{version}.tar.gz
-# Source0-md5:	10eb2beae1db7841ad6e3c054e59c740
+# Source0-md5:	c6cbc91a03ae5c46afdb32c7f87fa560
 URL:		http://www.southern-storm.com.au/treecc.html
 BuildRequires:	autoconf
 BuildRequires:	automake >= 1.6
