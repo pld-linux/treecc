@@ -2,12 +2,12 @@ Summary:	Tree compiler-compiler
 Summary(pl):	Kompilator kompilacji drzew
 Summary(pt_BR):	Tree Compilador de compiladores
 Name:		treecc
-Version:	0.2.6
-Release:	2
+Version:	0.2.8
+Release:	1
 License:	GPL
 Group:		Development/Languages
 Source0:	http://www.southern-storm.com.au/download/%{name}-%{version}.tar.gz
-# Source0-md5:	c90208eb99314b68afb4c133578288ad
+# Source0-md5:	d39c0fc9dabb9149859c97608c397b98
 Patch0:		%{name}-info.patch
 Patch1:		%{name}-make-jN.patch
 URL:		http://www.southern-storm.com.au/treecc.html
@@ -51,7 +51,8 @@ rm -f missing
 %install
 rm -rf $RPM_BUILD_ROOT
 
-%{__make} install DESTDIR=$RPM_BUILD_ROOT
+%{__make} install \
+	DESTDIR=$RPM_BUILD_ROOT
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -66,6 +67,5 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc README NEWS ChangeLog AUTHORS
 %attr(755,root,root) %{_bindir}/*
-# %{_datadir}/treecc
 %{_mandir}/man?/*
 %{_infodir}/treecc*
