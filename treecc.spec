@@ -30,7 +30,7 @@ obs³ugi abstrakcyjnej sk³adni drzew i operacji na drzewach.
 
 %build
 rm -f missing
-aclocal
+%{__aclocal}
 %{__autoconf}
 %{__automake}
 %configure
