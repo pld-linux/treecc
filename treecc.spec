@@ -1,18 +1,18 @@
 Summary:	Tree compiler-compiler
 Summary(pl):	Kompilator kompilacji drzew
+Summary(pt_BR):	Tree Compilador de compiladores
 Name:		treecc
-Version:	0.2.4
-Release:	2
+Version:	0.3.4
+Release:	1
 License:	GPL
 Group:		Development/Languages
 Source0:	http://www.southern-storm.com.au/download/%{name}-%{version}.tar.gz
-Patch0:		%{name}-info.patch
+# Source0-md5:	c6cbc91a03ae5c46afdb32c7f87fa560
 URL:		http://www.southern-storm.com.au/treecc.html
 BuildRequires:	autoconf
 BuildRequires:	automake >= 1.6
 BuildRequires:	bison
 BuildRequires:	flex
-BuildRequires:	gcc-c++
 BuildRequires:	texinfo
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -26,9 +26,14 @@ Program treecc jest przeznaczony do pomocy w tworzeniu kompilatorów i
 innych bazuj±cych na jêzykach narzêdzi. Zarz±dza generowaniem kodu do
 obs³ugi abstrakcyjnej sk³adni drzew i operacji na drzewach.
 
+%description -l pt_BR
+O programa treecc é destinado a auxiliar no desenvolviemnto de
+compiladores e outras ferramentas baseadas em linguagens. Ele controla
+a geração de código para manipulação de árvores de sintaxe abstrata e
+operações através de árvores
+
 %prep
 %setup -q
-%patch0 -p1
 
 %build
 rm -f missing
@@ -42,7 +47,8 @@ rm -f missing
 %install
 rm -rf $RPM_BUILD_ROOT
 
-%{__make} install DESTDIR=$RPM_BUILD_ROOT
+%{__make} install \
+	DESTDIR=$RPM_BUILD_ROOT
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -57,6 +63,5 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc README NEWS ChangeLog AUTHORS
 %attr(755,root,root) %{_bindir}/*
-# %{_datadir}/treecc
 %{_mandir}/man?/*
 %{_infodir}/treecc*
