@@ -1,0 +1,16 @@
+--- treecc-0.2.4/examples/Makefile.am~	Tue May 20 01:15:06 2003
++++ treecc-0.2.4/examples/Makefile.am	Tue May 20 01:15:06 2003
+@@ -5,11 +5,12 @@
+ ## @EXPR_CPP@
+ ## EXTRA_PROGRAMS  = expr_cpp
+ 
++expr_c_DEPENDENCIES = $(top_builddir)/treecc
+ expr_c_SOURCES = expr_c.c gram_c.y scan_c.l
+ expr_c_LDADD = -lm
+ 
+ expr_c.c expr_c.h: $(srcdir)/expr_c.tc
+-	../treecc -o expr_c.c -h expr_c.h $(srcdir)/expr_c.tc
++	$(top_builddir)/treecc -o expr_c.c -h expr_c.h $(srcdir)/expr_c.tc
+ 
+ ## expr_cpp_SOURCES = expr_cpp.cc gram_cpp.yy scan_cpp.ll
+ ##
