@@ -31,7 +31,7 @@ obs³ugi abstrakcyjnej sk³adni drzew i operacji na drzewach.
 %build
 aclocal
 autoconf
-automake -a -c
+automake -a -c -f
 %configure
 %{__make}
 
