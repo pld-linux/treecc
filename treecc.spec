@@ -8,31 +8,38 @@ Group:		Development/Languages
 Group(de):	Entwicklung/Sprachen
 Group(pl):	Programowanie/Jêzyki
 Source0:	http://www.southern-storm.com.au/download/%{name}-%{version}.tar.gz
+Patch0:		%{name}-info.patch
 URL:		http://www.southern-storm.com.au/treecc/
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	gcc-c++
+BuildRequires:	texinfo
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-The treecc program is designed to assist in the development of compilers
-and other language-based tools.  It manages the generation of code to handle
-abstract syntax trees and operations upon the trees.
+The treecc program is designed to assist in the development of
+compilers and other language-based tools. It manages the generation of
+code to handle abstract syntax trees and operations upon the trees.
 
 %description -l pl
-Program treecc jest przeznaczony do pomocy w tworzeniu kompilatorów i innych
-bazuj±cych na jêzykach narzêdzi. Zarz±dza generowaniem kodu do obs³ugi
-abstrakcyjnej sk³adni drzew i operacji na drzewach.
+Program treecc jest przeznaczony do pomocy w tworzeniu kompilatorów i
+innych bazuj±cych na jêzykach narzêdzi. Zarz±dza generowaniem kodu do
+obs³ugi abstrakcyjnej sk³adni drzew i operacji na drzewach.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
 aclocal
 autoconf
 automake -a -c
 %configure
-
 %{__make} 
 
 %install
+rm -rf $RPM_BUILD_ROOT
+
 %{__make} install DESTDIR=$RPM_BUILD_ROOT
 
 gzip -9nf README
@@ -48,10 +55,8 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc README*
-
+%doc *.gz
 %attr(755,root,root) %{_bindir}/*
-%{_datadir}/treecc/
-
+%{_datadir}/treecc
 %{_mandir}/man1/*
 %{_infodir}/treecc*
