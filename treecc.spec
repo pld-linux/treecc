@@ -2,7 +2,7 @@ Summary:	Tree compiler-compiler
 Summary(pl):	Kompilator kompilacji drzew
 Name:		treecc
 Version:	0.1.0
-Release:	1
+Release:	2
 License:	GPL
 Group:		Development/Languages
 Source0:	http://www.southern-storm.com.au/download/%{name}-%{version}.tar.gz
@@ -29,18 +29,17 @@ obs³ugi abstrakcyjnej sk³adni drzew i operacji na drzewach.
 %patch0 -p1
 
 %build
-#aclocal
-#autoconf
-#automake -a -c -f
-%configure2_13
+rm -f missing
+aclocal
+%{__autoconf}
+%{__automake}
+%configure
 %{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
 %{__make} install DESTDIR=$RPM_BUILD_ROOT
-
-gzip -9nf README
 
 %post
 [ ! -x /usr/sbin/fix-info-dir ] || /usr/sbin/fix-info-dir -c %{_infodir} >/dev/null 2>&1
@@ -53,7 +52,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc *.gz
+%doc README
 %attr(755,root,root) %{_bindir}/*
 %{_datadir}/treecc
 %{_mandir}/man1/*
