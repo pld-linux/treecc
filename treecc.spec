@@ -1,6 +1,6 @@
 Summary:	Tree compiler-compiler
-Summary(pl.UTF-8):   Kompilator kompilacji drzew
-Summary(pt_BR.UTF-8):   Tree Compilador de compiladores
+Summary(pl.UTF-8):	Kompilator kompilacji drzew
+Summary(pt_BR.UTF-8):	Tree Compilador de compiladores
 Name:		treecc
 Version:	0.3.8
 Release:	1
