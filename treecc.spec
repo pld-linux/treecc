@@ -3,7 +3,7 @@ Summary(pl.UTF-8):	Kompilator kompilacji drzew
 Summary(pt_BR.UTF-8):	Tree Compilador de compiladores
 Name:		treecc
 Version:	0.3.8
-Release:	1
+Release:	2
 License:	GPL
 Group:		Development/Languages
 Source0:	http://www.southern-storm.com.au/download/%{name}-%{version}.tar.gz
