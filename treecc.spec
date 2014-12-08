@@ -2,13 +2,13 @@ Summary:	Tree compiler-compiler
 Summary(pl.UTF-8):	Kompilator kompilacji drzew
 Summary(pt_BR.UTF-8):	Tree Compilador de compiladores
 Name:		treecc
-Version:	0.3.8
-Release:	2
+Version:	0.3.10
+Release:	1
 License:	GPL
 Group:		Development/Languages
-Source0:	http://www.southern-storm.com.au/download/%{name}-%{version}.tar.gz
-# Source0-md5:	ca26c97d00cff28fa312155b2228ff97
-URL:		http://www.southern-storm.com.au/treecc.html
+Source0:	http://download.savannah.gnu.org/releases/dotgnu-pnet/%{name}-%{version}.tar.gz
+# Source0-md5:	def09f2132f87d6a38a0718e2f14ee61
+URL:		http://www.gnu.org/software/dotgnu/pnet.html
 BuildRequires:	autoconf
 BuildRequires:	automake >= 1.6
 BuildRequires:	bison
