@@ -1,10 +1,14 @@
+#
+# Conditional build:
+%bcond_without	tests	# "make check"
+#
 Summary:	Tree compiler-compiler
 Summary(pl.UTF-8):	Kompilator kompilacji drzew
 Summary(pt_BR.UTF-8):	Tree Compilador de compiladores
 Name:		treecc
 Version:	0.3.10
 Release:	1
-License:	GPL
+License:	GPL v2+
 Group:		Development/Languages
 Source0:	http://download.savannah.gnu.org/releases/dotgnu-pnet/%{name}-%{version}.tar.gz
 # Source0-md5:	def09f2132f87d6a38a0718e2f14ee61
@@ -36,13 +40,16 @@ operações através de árvores
 %setup -q
 
 %build
-rm -f missing
 %{__aclocal}
 %{__autoconf}
+%{__autoheader}
 %{__automake}
 %configure
 %{__make}
+
+%if %{with tests}
 %{__make} check
+%endif
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -50,18 +57,21 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
+# API not exported (should be noinst)
+%{__rm} $RPM_BUILD_ROOT%{_libdir}/libtreecc.a
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%post	-p	/sbin/postshell
+%post	-p /sbin/postshell
 -/usr/sbin/fix-info-dir -c %{_infodir}
 
-%postun	-p	/sbin/postshell
+%postun	-p /sbin/postshell
 -/usr/sbin/fix-info-dir -c %{_infodir}
 
 %files
 %defattr(644,root,root,755)
-%doc README NEWS ChangeLog AUTHORS
-%attr(755,root,root) %{_bindir}/*
-%{_mandir}/man?/*
-%{_infodir}/treecc*
+%doc AUTHORS ChangeLog NEWS README doc/{binary_readme,extending}.txt doc/essay.html
+%attr(755,root,root) %{_bindir}/treecc
+%{_mandir}/man1/treecc.1*
+%{_infodir}/treecc.info*
