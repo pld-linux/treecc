@@ -7,7 +7,7 @@ Summary(pl.UTF-8):	Kompilator kompilacji drzew
 Summary(pt_BR.UTF-8):	Tree Compilador de compiladores
 Name:		treecc
 Version:	0.3.10
-Release:	1
+Release:	2
 License:	GPL v2+
 Group:		Development/Languages
 Source0:	http://download.savannah.gnu.org/releases/dotgnu-pnet/%{name}-%{version}.tar.gz
